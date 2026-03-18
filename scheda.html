@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Druido LV3 - Scheda Operativa</title>
+  <style>
+    :root {
+      --bg: #f6f3ee;
+      --ink: #1f1f1f;
+      --muted: #5a5a5a;
+      --line: #222;
+      --soft: #d7d0c4;
+      --water: #dfeef7;
+      --spell: #f7efe0;
+      --combat: #f8e3e3;
+      --support: #e7f4e6;
+      --utility: #ece7f6;
+      --header: #ede6da;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 10mm;
+      background: white;
+    }
+
+    .title {
+      border: 3px solid var(--line);
+      padding: 10px 14px;
+      margin-bottom: 10px;
+      background: var(--header);
+    }
+
+    .title h1 {
+      margin: 0 0 6px;
+      font-size: 24px;
+      letter-spacing: 0.4px;
+    }
+
+    .subtitle {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 8px;
+    }
+
+    .box {
+      border: 2px solid var(--line);
+      padding: 8px 10px;
+      background: #fff;
+      break-inside: avoid;
+    }
+
+    .box h2 {
+      margin: -8px -10px 8px;
+      padding: 6px 8px;
+      font-size: 14px;
+      border-bottom: 2px solid var(--line);
+      background: var(--header);
+      text-transform: uppercase;
+      letter-spacing: .4px;
+    }
+
+    .statline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .stat {
+      border: 1px solid var(--line);
+      padding: 8px;
+      text-align: center;
+      background: #fafafa;
+    }
+
+    .small { font-size: 12px; color: var(--muted); }
+    .tiny { font-size: 11px; color: var(--muted); }
+    .label { font-weight: 700; }
+    .mono { font-family: "Courier New", monospace; }
+
+    .span-12 { grid-column: span 12; }
+    .span-8 { grid-column: span 8; }
+    .span-6 { grid-column: span 6; }
+    .span-4 { grid-column: span 4; }
+    .span-3 { grid-column: span 3; }
+
+    .pill {
+      display: inline-block;
+      border: 1px solid var(--line);
+      padding: 2px 6px;
+      font-size: 11px;
+      font-weight: 700;
+      margin: 0 4px 4px 0;
+      background: #fafafa;
+    }
+
+    .slots {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    .slotrow {
+      border: 1px solid var(--line);
+      padding: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      background: #fafafa;
+    }
+
+    .spell-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    .card {
+      border: 1.5px solid var(--line);
+      padding: 8px;
+      min-height: 124px;
+    }
+
+    .card h3 {
+      margin: 0 0 6px;
+      font-size: 14px;
+    }
+
+    .card p {
+      margin: 3px 0;
+      font-size: 12px;
+      line-height: 1.3;
+    }
+
+    .combat { background: var(--combat); }
+    .support { background: var(--support); }
+    .utility { background: var(--utility); }
+    .water { background: var(--water); }
+    .spell { background: var(--spell); }
+
+    .flow p {
+      margin: 6px 0;
+      font-size: 13px;
+    }
+
+    ul {
+      margin: 6px 0 0 18px;
+      padding: 0;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    @media print {
+      body { background: white; }
+      .page { margin: 0; width: 100%; min-height: auto; padding: 8mm; }
+      @page { size: A4; margin: 8mm; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="title">
+      <h1>Druido LV 3 – Scheda Operativa a Griglia</h1>
+      <div class="subtitle">
+        Draconide • Circolo del Mare • Background: Marinaio.
+      </div>
+    </div>
+
+    <div class="grid">
+      <section class="box span-6">
+        <h2>Stat Incantesimi</h2>
+        <div class="statline">
+          <div class="stat">CD TS<br>
+             <p class="tiny" style="margin-top:8px;">Classe di difficoltà sul tiro salvezza</p>
+            13</div>
+          <div class="stat">Tiri a colpire<br>+5</div>
+          <div class="stat">Saggezza<br>+3</div>
+          <div class="stat">Competenza<br>+2</div>
+        </div>
+      </section>
+
+      <section class="box span-6">
+        <h2>Slot Incantesimi / Usi</h2>
+        <div class="slots">
+          <div class="slotrow">Livello 1: ☐ ☐ ☐ ☐</div>
+          <div class="slotrow">Livello 2: ☐ ☐</div>
+          <div class="slotrow">Forma Selvatica: ☐ ☐</div>
+          <div class="slotrow">Soffio Draconico: ☐ ☐</div>
+        </div>
+    </section>
+
+      <section class="box span-6">
+        <h2>Tratti Razza / Classe</h2>
+        <p><span class="label">Resistenza ai danni:</span> Fulmine</p>
+        <p><span class="label">Scurovisione:</span> 18 m</p>
+        <p><span class="label">Forma Selvatica:</span> azione bonus, 2 usi, durata fino a 3 ore.</p>
+        <p><span class="label">Furia dei Mari:</span> azione bonus, emanazione 1,5 m per 10 minuti; nel turno successivo e nei seguenti puoi colpire una creatura nel campo visivo dentro l’emanazione.</p>
+        <p><span class="label">Tiro Furia dei Mari:</span> TS Costituzione CD 13</p>
+        <p><span class="label">Danni Furia dei Mari:</span> 1d6 + 3 freddo, oppure la creatura Grande o inferiore viene spinta fino a 4,5 m dal druido.</p>
+      </section>
+
+      <section class="box span-6 combat">
+        <h2>🐉 Soffio Draconico</h2>
+        <p><span class="label">Tipo:</span> Azione</p>
+        <p><span class="label">Area:</span> linea 4,5 m × 1,5 m <b>oppure</b> cono 4,5 m</p>
+        <p><span class="label">Tiro:</span> TS Destrezza CD 13</p>
+        <p><span class="label">Danni:</span> 1d10 fulmine (metà se supera il TS)</p>
+        <p><span class="label">Usi:</span> 2 per riposo lungo</p>
+        <p><span class="label">Usalo quando:</span> prendi 2 o più nemici nell’area.</p>
+      </section>
+
+      <section class="box span-12">
+        <h2>Trucchetti</h2>
+        <div class="spell-grid">
+          <div class="card spell">
+            <h3>🌿 Randello Incantato</h3>
+            <p><span class="label">Tipo:</span> Azione bonus • <span class="label">Durata:</span> 1 minuto</p>
+            <p><span class="label">Tiro:</span> Attacco in mischia con incantesimo +5</p>
+            <p><span class="label">Danni:</span> 1d8 + 3</p>
+            <p><span class="label">Uso:</span> usa Saggezza invece di Forza per colpire e danni.</p>
+            <p><span class="label">Quando:</span> se vuole stare davanti e menare.</p>
+          </div>
+          <div class="card utility">
+            <h3>✨ Guida</h3>
+            <p><span class="label">Tipo:</span> Azione • <span class="label">Gittata:</span> contatto</p>
+            <p><span class="label">Durata:</span> concentrazione, fino a 1 minuto</p>
+            <p><span class="label">Effetto:</span> +1d4 a una prova di caratteristica</p>
+            <p><span class="label">Quando:</span> prima di esplorazione, prove sociali, percezione, furtività, atletica.</p>
+            <p><span class="label">Nota:</span> non funziona su attacchi o tiri salvezza.</p>
+          </div>
+          <div class="card water">
+            <h3>❄️ Raggio di Gelo <span class="tiny">(Circolo del Mare)</span></h3>
+            <p><span class="label">Tipo:</span> Azione • <span class="label">Gittata:</span> 18 m</p>
+            <p><span class="label">Tiro:</span> Attacco a distanza con incantesimo +5</p>
+            <p><span class="label">Danni:</span> 1d8 freddo</p>
+            <p><span class="label">Effetto:</span> velocità bersaglio -3 m fino all’inizio del turno successivo.</p>
+            <p><span class="label">Quando:</span> default a distanza.</p>
+          </div>
+          <div class="card support">
+            <h3>💚 Cura Ferite</h3>
+            <p><span class="label">Tipo:</span> Azione • <span class="label">Gittata:</span> contatto</p>
+            <p><span class="label">Cura:</span> 2d8 + 3</p>
+            <p><span class="label">Quando:</span> alleato a terra o messo male.</p>
+            <p><span class="label">Nota:</span> usando slot più alti, +2d8 per livello sopra il 1°.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="box span-12">
+        <h2>Incantesimi Preparati</h2>
+        <div class="spell-grid">
+          <div class="card support">
+            <h3>🌿 Intralciare</h3>
+            <p><span class="label">Tipo:</span> Azione • <span class="label">Gittata:</span> 27 m • <span class="label">Durata:</span> concentrazione, fino a 1 minuto</p>
+            <p><span class="label">Tiro:</span> TS Forza CD 13</p>
+            <p><span class="label">Effetto:</span> terreno difficile, creature trattenute se falliscono.</p>
+            <p><span class="label">Quando:</span> all’inizio contro gruppi.</p>
+          </div>
+          <div class="card combat">
+            <h3>❄️ Coltello di Ghiaccio</h3>
+            <p><span class="label">Tipo:</span> Azione • <span class="label">Gittata:</span> 18 m</p>
+            <p><span class="label">Tiro:</span> Attacco a distanza con incantesimo +5</p>
+            <p><span class="label">Danni:</span> 1d10 perforanti al bersaglio, poi TS Des CD 13 per l’esplosione: 2d6 freddo (metà se supera)</p>
+            <p><span class="label">Quando:</span> se due o più nemici sono vicini.</p>
+          </div>
+          <div class="card support">
+            <h3>🐺 Richiama Bestia</h3>
+            <p><span class="label">Tipo:</span> Azione • <span class="label">Gittata:</span> 27 m • <span class="label">Durata:</span> concentrazione, fino a 1 ora</p>
+            <p><span class="label">Effetto:</span> evochi uno spirito bestiale che combatte per te.</p>
+            <p><span class="label">Attacco bestia:</span> +5 • <span class="label">Danni:</span> 1d8 + 4</p>
+            <p><span class="label">Quando:</span> inizio combattimento importante.</p>
+            <p><span class="label">Nota:</span> la bestia agisce subito dopo di te e obbedisce a comandi verbali.</p>
+          </div>
+          <div class="card utility">
+            <h3>⚙️ Ingrandire / Ridurre</h3>
+            <p><span class="label">Tipo:</span> Azione • <span class="label">Gittata:</span> 9 m • <span class="label">Durata:</span> concentrazione, fino a 1 minuto</p>
+            <p><span class="label">Tiro:</span> TS Costituzione CD 13 (solo se il bersaglio non è consenziente)</p>
+            <p><span class="label">Ingrandire:</span> vantaggio prove e TS Forza, +1d4 danni con attacchi</p>
+            <p><span class="label">Ridurre:</span> svantaggio prove e TS Forza, -1d4 danni con armi o colpi senz’armi</p>
+            <p><span class="label">Quando:</span> buff a un alleato forte o debuff tattico.</p>
+          </div>
+        </div>
+      </section>
+
+    <section class="box span-12 water">
+    <h2>Incantesimi Sempre Pronti – Circolo del Mare</h2>
+    <div class="spell-grid">
+
+        <div class="card water">
+        <h3>🌫️ Nube di Nebbia (Lv1)</h3>
+        <p><span class="label">Tipo:</span> Azione • <span class="label">Gittata:</span> 36 m • <span class="label">Durata:</span> concentrazione, fino a 1 ora</p>
+        <p><span class="label">Effetto:</span> sfera di nebbia di 6 m di raggio, area pesantemente oscurata.</p>
+        <p><span class="label">Quando:</span> copertura, fuga, rompere la visuale.</p>
+        </div>
+
+        <div class="card water">
+        <h3>🌬️ Folata di Vento (Lv2)</h3>
+        <p><span class="label">Tipo:</span> Azione • <span class="label">Origine:</span> incantatore • <span class="label">Durata:</span> concentrazione, fino a 1 minuto</p>
+        <p><span class="label">Tiro:</span> TS Forza CD 13</p>
+        <p><span class="label">Effetto:</span> linea 18 m × 3 m; spinge di 4,5 m se il TS fallisce.</p>
+        <p><span class="label">Nota:</span> puoi cambiare direzione come azione bonus.</p>
+        </div>
+
+        <div class="card water">
+        <h3>🌊 Onda Tonante (Lv1)</h3>
+        <p><span class="label">Tipo:</span> Azione • <span class="label">Origine:</span> incantatore</p>
+        <p><span class="label">Tiro:</span> TS Costituzione CD 13</p>
+        <p><span class="label">Danni:</span> 2d8 tuono (metà se TS)</p>
+        <p><span class="label">Effetto:</span> spinge le creature di 3 m.</p>
+        <p><span class="label">Quando:</span> panic se ti circondano.</p>
+        </div>
+
+        <div class="card water">
+        <h3>💥 Frantumare (Lv2)</h3>
+        <p><span class="label">Tipo:</span> Azione • <span class="label">Gittata:</span> 18 m</p>
+        <p><span class="label">Tiro:</span> TS Costituzione CD 13</p>
+        <p><span class="label">Danni:</span> 3d8 tuono (metà se TS)</p>
+        <p><span class="label">Quando:</span> AoE principale a distanza.</p>
+        </div>
+
+    </div>
+    </section>
+    </div>
+  </div>
+</body>
+</html>
